@@ -15,18 +15,22 @@ public class Player {
     }
 
     public String getPlayerName() {
+        //returns the player Name
         return playerName;
     }
 
     public HashMap<Integer, String> getCardMap() {
+        //getter for cardMap
         return cardMap;
     }
 
     public ArrayList getPlayerList() {
+        //getter for list of player objects
         return playerList;
     }
 
     private int[][] countCardNumbers() {
+        //counts card number values and stores them in an array
         int count1 = 0;
         int count2 = 0;
         int count3 = 0;
@@ -92,6 +96,7 @@ public class Player {
     }
 
     private int[][] countCardSuits(){
+        //counts card suits and stores them in an array
         int countC = 0;
         int countD = 0;
         int countS = 0;
@@ -117,7 +122,7 @@ public class Player {
     }
 
     public String cardRank() {
-
+        //returns card rank
         int[][] countNumber = countCardNumbers();
         int[][] countSuit = countCardSuits();
 
@@ -193,7 +198,7 @@ public class Player {
     }
 
     public void determineWinner(){
-
+        //prints out winner or calls a method to bread a tie
         if(playerList.size()%2 == 0) {
             Player player1 = (Player) playerList.get(playerList.size() - 2);
             Player player2 = (Player) playerList.get(playerList.size() - 1);
@@ -209,7 +214,7 @@ public class Player {
     }
 
     private void tieBreak(){
-
+        //method to break a tie if the ranks are equal
         if(playerList.size()%2 == 0) {
             Player player1 = (Player) playerList.get(playerList.size() - 2);
             Player player2 = (Player) playerList.get(playerList.size() - 1);
@@ -298,6 +303,7 @@ public class Player {
     }
 
     private String highCard(){
+        //determines highest number value in the two hands of cards
         if(playerList.size()%2 == 0) {
             Player player1 = (Player) playerList.get(playerList.size() - 2);
             Player player2 = (Player) playerList.get(playerList.size() - 1);
@@ -319,7 +325,7 @@ public class Player {
     }
 
     private String numberToCard(int card){
-
+        //converts card number in the countNumber array into it's string value
         if(card == 11)
             return "Jack";
         else if(card == 12)

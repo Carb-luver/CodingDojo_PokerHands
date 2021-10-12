@@ -15,6 +15,7 @@ public class Main {
         HashMap<Integer,String> cardMapWhite = new HashMap();
         int count =0;
 
+        //scans user input
         while (scanner.hasNext()){
             nextToken = scanner.next().toLowerCase(Locale.ROOT).trim();
 
